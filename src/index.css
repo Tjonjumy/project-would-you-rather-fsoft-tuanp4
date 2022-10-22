@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* CSS for Login Page Start */
+.login-page-container {
+  width: 100%;
+  height: 100vh;
+}
+.users-login {
+  max-width: 550px;
+  border-radius: 10px;
+  margin: auto auto;
+}
+.user-avatar {
+  text-align: center;
+}
+.user-avatar input[name="cbUser"] {
+  display: none;
+}
+.user-avatar:hover img {
+  cursor: pointer;
+  border: 1px solid cyan;
+  border-radius: 50%;
+  box-shadow:2px 2px 15px cyan, -2px -2px 15px cyan;
+}
+.user-avatar:has(> input[type="radio"]:checked) img {
+  border: 1px solid cyan;
+  border-radius: 50%;
+  box-shadow:2px 2px 15px cyan, -2px -2px 15px cyan;
+}
+
+.user-avatar img {
+  width:50%;
+}
+.btn-login {
+  width:100%
+}
+/* CSS for Login Page End */
+
+/* CSS for Navar Start */
+nav.navbar {
+  border-bottom: 1px solid red;
+}
+li.nav-item {
+  margin-right: 10px;
+}
+li.nav-item:hover {
+  background-color: cyan;
+  border-radius: 5px;
+}
+li.nav-item:has(> .nav-link.active) {
+  background-color: cyan;
+  border-radius: 5px;
+}
+li.nav-item > a.nav-link {
+  color: #000 !important;
+}
+li.nav-item > a.nav-link.active {
+  color: red !important;
+}
+/* CSS for Navar End */

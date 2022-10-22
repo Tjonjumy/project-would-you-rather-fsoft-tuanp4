@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+
 import './App.css';
+import Navbar from './Components/Navbar';
+import MainPage from './Components/MainPage';
+import Login from './Components/Login';
+import * as DataAPI from './untils/_DATA';
+
+import { receiveUserActions } from './Store/receiveUser';
 
 function App() {
+  const isAuth = useSelector(state => state.auth.isAuthenticated);
+  const users = useSelector(state => state.receiveUser.users);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      DataAPI._getUsers().then(users => dispatch(receiveUserActions.getListUsers(users)));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      { 
+        !isAuth && users &&
+        <Login />
+      }
+      {
+        isAuth &&
+        <Fragment>
+          <Navbar />
+          <MainPage />
+        </Fragment>
+      }
+    </Router>
   );
 }
 
