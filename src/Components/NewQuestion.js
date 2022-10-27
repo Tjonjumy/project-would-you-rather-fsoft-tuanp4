@@ -1,7 +1,9 @@
-import React from 'react';
+import { Fragment } from 'react';
 
 const NewQuestion = () => {
-    return <div>NewQuestion</div>
+    return <Fragment>
+        New Question
+    </Fragment>
 }
 
 export default NewQuestion;

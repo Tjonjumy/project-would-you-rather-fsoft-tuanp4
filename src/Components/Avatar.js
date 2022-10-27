@@ -4,7 +4,6 @@ const Avatar = (props) => {
     const { user } = props;
 
     const onSelectAvatar= (e) => {
-        // console.log(e.target.value);
         props.onSelectAvatar(e.target.value);
       }
 

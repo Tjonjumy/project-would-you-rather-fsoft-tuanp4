@@ -11,6 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.spinner-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100000;
+  translate: -50% -50%;
+}
+
 /* CSS for Login Page Start */
 .login-page-container {
   width: 100%;
@@ -68,4 +76,27 @@ li.nav-item > a.nav-link {
 li.nav-item > a.nav-link.active {
   color: red !important;
 }
+.avatar-user img {
+  width: 50px !important;
+  margin-right: 1rem;
+}
 /* CSS for Navar End */
+/* CSS for Question Component Start */
+.qs-cart-container {
+  width: 60%;
+  margin: auto;
+}
+.qs-card-avatar {
+  border-right: 2px solid rgb(2, 46, 122);
+  width:25% !important;
+}
+.qs-card-avatar img {
+  width:80% !important;
+}
+.card-body-content {
+  width:75% !important;
+}
+.option-content {
+  width: 90%;
+}
+/* CSS for Question Component End */

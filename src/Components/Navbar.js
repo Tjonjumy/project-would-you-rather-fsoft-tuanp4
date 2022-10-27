@@ -11,7 +11,6 @@ const MenuLeft = () => {
     const dispatch = useDispatch();
 
     const userLoggedIn = useSelector(state => state.auth);
-    console.log(userLoggedIn)
 
     const onLogoutHanlde = () => {
         dispatch(authActions.logout())
@@ -31,7 +30,8 @@ const MenuLeft = () => {
                                 <NavLink className="nav-link" activeclassname="active" to="/leader-board">Leaderboard</NavLink>
                             </li>
                         </ul>
-                        <div className="me-3">Hello {userLoggedIn.name}</div>
+                        <div className="me-3">Hello, {userLoggedIn.name}</div>
+                        <div className="avatar-user"><img src={userLoggedIn.avatarURL} /></div>
                         <button type="button" className="btn btn-info btn-logout" onClick={onLogoutHanlde}>Logout</button>
                     </div>
                 </div>

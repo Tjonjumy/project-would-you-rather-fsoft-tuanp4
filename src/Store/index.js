@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import authReducer from './authUser';
-import receiveUserReducer from './receiveUser';
+import questionsReducer from './questions';
+import userReducer from './user';
 
 const store = configureStore({
     reducer: { 
         auth: authReducer,
-        receiveUser: receiveUserReducer,
+        user: userReducer,
+        questions: questionsReducer
     }
 })
 
