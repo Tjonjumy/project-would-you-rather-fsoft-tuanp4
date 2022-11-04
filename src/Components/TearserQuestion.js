@@ -5,7 +5,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 const TearserQuestion = (props) => {
 
-    let { question } = props;
+    let { question, isAnswer } = props;
 
     const navigate = useNavigate();
 
@@ -17,17 +17,6 @@ const TearserQuestion = (props) => {
     // get list Users
     const users = useSelector(state => state.user.users);
     const authUser = useSelector(state => state.auth);
-    
-    // Check authUser is answered
-    const answers = authUser.answers;
-    let isAuthUserAnswered = false;
-    for (const answerId in answers) {
-        if (answerId === question.id) {
-            isAuthUserAnswered = true;
-            console.log(isAuthUserAnswered)
-            break;
-        }
-    }
 
     // get avatar of author questions
     const getAvatarUser = (id) => {
@@ -52,23 +41,15 @@ const TearserQuestion = (props) => {
                         <div className="card-body-content d-flex flex-column align-items-start justify-content-center">
                             <h5 className="card-title">Would you rather</h5>
                             <div className="ps-4">
-                                <input type="radio" name={`${question.id}-optionAnswer`}
-                                    id={`${question.id}-optionOne`} value="1" disabled 
-                                    checked={answers[question.id] === 'optionOne'}
-                                    />
-                                <label className="card-text ms-2" htmlFor={`${question.id}-optionOne`}>{question.optionOne.text}</label>
+                                <label className="card-text ms-2">{question.optionOne.text}</label>
                             </div>
                             <div className="ps-4">
-                                <input type="radio" name={`${question.id}-optionAnswer`}
-                                    id={`${question.id}-optionTwo`} value="2" disabled 
-                                    checked={answers[question.id] === 'optionTwo'}
-                                    />
-                                <label className="card-text ms-2" htmlFor={`${question.id}-optionTwo`}>{question.optionTwo.text}</label>
+                                <label className="card-text ms-2">{question.optionTwo.text}</label>
                             </div>
-                            {   !isAuthUserAnswered &&
-                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/question/${question.id}`}>Answer</NavLink>
+                            {   !isAnswer &&
+                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/question/${question.id}`}>View Poll </NavLink>
                             }
-                            {   isAuthUserAnswered &&
+                            {   isAnswer &&
                                 <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/question/${question.id}`}>View Result</NavLink>
                             }
                         </div>

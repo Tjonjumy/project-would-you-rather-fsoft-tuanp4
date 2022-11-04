@@ -35,7 +35,7 @@ const Home = () => {
     let lsAansweredQuestions;
     if (answeredQuestions.length > 0) {
         lsAansweredQuestions = answeredQuestions.map(question => {
-            return <TearserQuestion question={question} key={question.id} />
+            return <TearserQuestion question={question} key={question.id} isAnswer={true}/>
         })
     }
 
@@ -51,7 +51,7 @@ const Home = () => {
     let lstUnansweredQuestions;
     if (unansweredQuestions.length > 0) {
         lstUnansweredQuestions = unansweredQuestions.map(question => {
-            return <TearserQuestion question={question} key={question.id} />
+            return <TearserQuestion question={question} key={question.id} isAnswer={false} />
         })
     }
  

@@ -30,7 +30,6 @@ const AnswerQuestion = () => {
     for (const answerId in answers) {
         if (answerId === qsId) {
             isAuthUserAnswered = true;
-            console.log(isAuthUserAnswered)
             break;
         }
     }
@@ -55,7 +54,6 @@ const AnswerQuestion = () => {
     const getAvatarUser = (id) => {
         for  (const userId in users) {
             if (userId == id) {
-                console.log(users[userId].avatarURL, userId, id)
                 return users[userId].avatarURL;
             }
         }
@@ -127,7 +125,7 @@ const AnswerQuestion = () => {
                                                 id={`${question.id}-optionTwo`} value="2" />
                                             <label className="card-text ms-2" htmlFor={`${question.id}-optionTwo`}>{question.optionTwo.text}</label>
                                         </div>
-                                        <a className={`btn btn-primary mt-3 ms-4 ${isDisabled ? "disabled" : ""}`} onClick={() => onSubmitAnswer(question.id)}>Answer</a>
+                                        <a className={`btn btn-primary mt-3 ms-4 ${isDisabled ? "disabled" : ""}`} onClick={() => onSubmitAnswer(question.id)}>Submit</a>
                                     </Fragment>
                                 }
                                 {   isAuthUserAnswered && 

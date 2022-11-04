@@ -13,6 +13,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const users = useSelector(state => state.user.users);
+    const questions = useSelector(state => state.questions.questions);
 
     let userSlected;
 
@@ -30,9 +31,14 @@ const Login = () => {
 
     let allQuestions;
     useEffect(() => {
-        DataAPI._getQuestions().then(questions => {
+        // Check if questions are existing
+        if (!questions) {
+            DataAPI._getQuestions().then(questions => {
+                allQuestions = questions;
+            });
+        } else {
             allQuestions = questions;
-        });
+        }
     }, []);
     const onSubmitSelectAvatar = () => {
         if (userSlected) {
