@@ -6,7 +6,6 @@ import Home from './Home';
 import AnswerQuestion from './AnswerQuestion';
 import Leaderboard from './Leaderboard';
 import NewQuestion from './NewQuestion';
-import Question from './Question';
 import ComponentNotMatch from './ComponentNotMatch';
 
 const MainPage = () => {

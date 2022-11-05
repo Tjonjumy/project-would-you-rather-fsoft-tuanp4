@@ -171,6 +171,8 @@ let users = {
         votes: [],
         text: optionOneText,
       },
+
+      
       optionTwo: {
         votes: [],
         text: optionTwoText,

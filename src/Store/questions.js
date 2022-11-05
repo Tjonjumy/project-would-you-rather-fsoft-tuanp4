@@ -5,7 +5,7 @@ const initialState = {
     };
 
 const questionsSlice = createSlice({
-    name: 'getQuestions',
+    name: 'questions',
     initialState: initialState,
     reducers: {
         getListQuestions(state, action) {
@@ -27,7 +27,17 @@ const questionsSlice = createSlice({
                 }
 
             }
-        }
+        },
+        saveNewQuestion(state, action) {
+            const newQuestion = action.payload;
+            return {
+                ...state,
+                questions: {
+                    ...state.questions,
+                    [newQuestion.id]: newQuestion
+                }
+            }
+        },
     }
 });
 

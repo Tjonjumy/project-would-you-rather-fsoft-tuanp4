@@ -81,6 +81,7 @@ li.nav-item > a.nav-link.active {
   margin-right: 1rem;
 }
 /* CSS for Navar End */
+
 /* CSS for Question Component Start */
 .qs-cart-container {
   width: 60%;
@@ -100,3 +101,34 @@ li.nav-item > a.nav-link.active {
   width: 90%;
 }
 /* CSS for Question Component End */
+
+#backdrop {
+  position:absolute;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgb(0,0,0,0.2);
+}
+
+/* CSS for Leader-board Start */
+.score-title {
+  background-color: #ffd1dc;
+  height: 80px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #146c43;
+}
+.score-box {
+  background-color: #ffebef;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  line-height: 120px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #146c43;
+}
+
+/* CSS for Leader-board End */

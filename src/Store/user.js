@@ -26,7 +26,21 @@ const userSlice = createSlice({
                     }
                 }
             }
-        }
+        },
+        addQuestionToUser(state, action) {
+            const newQuestion = action.payload;
+            const authedUser = newQuestion.author;
+            return {
+                ...state,
+                users: {
+                    ...state.users,
+                    [authedUser]: {
+                        ...state.users[authedUser],
+                        questions: state.users[authedUser].questions.concat([newQuestion.id])
+                    }
+                }
+            }
+        },
     }
 });
 

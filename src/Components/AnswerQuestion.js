@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -133,7 +133,7 @@ const AnswerQuestion = () => {
                                     <div className="ps-4 option-content">
                                             <p className="card-text ms-2" >{question.optionOne.text}</p>
                                             <div className="progress">
-                                                <div className="progress-bar" role="progressbar" 
+                                                <div className="progress-bar bg-success" role="progressbar" 
                                                 style={{width: rateOptionOne}} 
                                                 aria-valuenow={rateOptionOne} 
                                                 aria-valuemin="0" 
@@ -144,7 +144,7 @@ const AnswerQuestion = () => {
                                         <div className="ps-4 option-content">
                                             <p className="card-text ms-2" >{question.optionTwo.text}</p>
                                             <div className="progress">
-                                                <div className="progress-bar" role="progressbar" 
+                                                <div className="progress-bar bg-success" role="progressbar" 
                                                 style={{width: rateOptionTwo}} 
                                                 aria-valuenow={rateOptionTwo} 
                                                 aria-valuemin="0" 
@@ -152,7 +152,7 @@ const AnswerQuestion = () => {
                                             </div>
                                             <div className="text-center mt-2">{optionTwoQty} out of {totalAnswer} votes</div>
                                         </div>
-                                        <button className="btn btn-secondary mt-3 ms-4" onClick={() => navigate(-1)}>Back</button>
+                                        <button className="btn btn-warning mt-3 ms-4" onClick={() => navigate(-1)}>Back</button>
                                     </Fragment>
                                 }
                             </div>
