@@ -29,6 +29,7 @@ const Login = () => {
         return <Avatar user={user} key={user.id} onSelectAvatar={handleSelectAvatar}/>
     })
 
+    // get all questions
     let allQuestions;
     useEffect(() => {
         // Check if questions are existing
@@ -40,11 +41,12 @@ const Login = () => {
             allQuestions = questions;
         }
     }, []);
+
     const onSubmitSelectAvatar = () => {
         if (userSlected) {
             dispatch(authActions.login(userSlected));
             dispatch(questionsActions.getListQuestions(allQuestions));
-            navigate("/");
+            //navigate("/");
         } else {
             return;
         }

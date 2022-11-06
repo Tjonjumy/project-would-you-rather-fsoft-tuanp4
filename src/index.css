@@ -84,7 +84,7 @@ li.nav-item > a.nav-link.active {
 
 /* CSS for Question Component Start */
 .qs-cart-container {
-  width: 60%;
+  max-width: 720px;
   margin: auto;
 }
 .qs-card-avatar {
@@ -102,6 +102,11 @@ li.nav-item > a.nav-link.active {
 }
 /* CSS for Question Component End */
 
+/* CSS for new-question Component Start */
+.new-question {
+  max-width: 720px;
+  margin: auto auto;
+}
 #backdrop {
   position:absolute;
   top:0;
@@ -111,24 +116,55 @@ li.nav-item > a.nav-link.active {
   z-index: 999;
   background-color: rgb(0,0,0,0.2);
 }
+/* CSS for new-question Component End */
+
+.option-content .badge.bg-info {
+  position: absolute;
+  top: 3px;
+  right: 0;
+}
+.your-answer {
+  color: green;
+}
 
 /* CSS for Leader-board Start */
+.leader-board-comp {
+  max-width:720px;
+  margin: auto auto;
+}
+.leader-board-avatar img {
+  width: 120px;
+}
 .score-title {
   background-color: #ffd1dc;
-  height: 80px;
-  font-size: 2rem;
+  height: 40px;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #146c43;
+  color: #fff;
+}
+.rank-index {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+}
+.rank-text {
+  font-size:1.5rem!important;
 }
 .score-box {
   background-color: #ffebef;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  line-height: 120px;
+  line-height: 80px;
   font-size: 2rem;
   font-weight: bold;
   color: #146c43;
 }
-
 /* CSS for Leader-board End */
+
+/* CSS for Page not found Start */
+.error-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+/* CSS for Page not found End */

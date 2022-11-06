@@ -3,17 +3,13 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../Store/authUser';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import fontawesome from '@fortawesome/fontawesome'
-// import { faLight, faArrowRightFromBracket } from '@fortawesome/fontawesome-free-solid';
-
 const MenuLeft = () => {
     const dispatch = useDispatch();
 
     const userLoggedIn = useSelector(state => state.auth);
 
     const onLogoutHanlde = () => {
-        dispatch(authActions.logout())
+        dispatch(authActions.logout());
     }
     return <Fragment>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -31,7 +27,7 @@ const MenuLeft = () => {
                             </li>
                         </ul>
                         <div className="me-3">Hello, {userLoggedIn.name}</div>
-                        <div className="avatar-user"><img src={userLoggedIn.avatarURL} /></div>
+                        <div className="avatar-user"><img src={userLoggedIn.avatarURL} alt='avatar'/></div>
                         <button type="button" className="btn btn-info btn-logout" onClick={onLogoutHanlde}>Logout</button>
                     </div>
                 </div>

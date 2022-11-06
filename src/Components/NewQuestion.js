@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 import * as DataAPI from '../untils/_DATA';
 
@@ -8,6 +9,7 @@ import { userActions } from "../Store/user";
 
 const NewQuestion = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const [isShowBackdrop, setIsShowBackdrop] = useState('');
 
@@ -65,7 +67,8 @@ const NewQuestion = () => {
             setEnteredOptTwoTxtTouched(false);
             setTimeout(() => {
                 setIsShowBackdrop(false);
-            }, 300)
+                navigate("/");
+            }, 100)
         });
     }
     return <Fragment>
@@ -76,7 +79,7 @@ const NewQuestion = () => {
                 </div>
             </div>
         }
-        <div className="card">
+        <div className="card new-question">
             <div className="card-header">
                 <h3 className="text-center">Create New Question</h3>
             </div>

@@ -1,7 +1,6 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
-import * as DataAPI from '../untils/_DATA';
+import { useSelector } from 'react-redux';
 
 import TearserQuestion from './TearserQuestion';
 
@@ -24,13 +23,12 @@ const Home = () => {
     for (const qsId in answers) {
         answeredQuestionsId.push(qsId);
     }
+
     // get list answered questions
-    let answeredQuestions = [];
-    for (const qsId in allQuestions) {
-        if (answeredQuestionsId.includes(qsId)) {
-            answeredQuestions.push(allQuestions[qsId]);
-        }
-    }
+    const answeredQuestions = Object.values(allQuestions)
+    .filter(question => answeredQuestionsId.includes(question.id))
+    .sort((a, b) => b.timestamp - a.timestamp);
+
     // get list unanswered questions to render UI
     let lsAansweredQuestions;
     if (answeredQuestions.length > 0) {
@@ -40,12 +38,9 @@ const Home = () => {
     }
 
     // get list unanswered questions
-    let unansweredQuestions = [];
-    for (const qsId in allQuestions) {
-        if (!answeredQuestionsId.includes(qsId)) {
-            unansweredQuestions.push(allQuestions[qsId]);
-        }
-    }
+    const unansweredQuestions = Object.values(allQuestions)
+    .filter(question => !answeredQuestionsId.includes(question.id))
+    .sort((a, b) => b.timestamp - a.timestamp);
 
     // get list unanswered questions to render UI
     let lstUnansweredQuestions;

@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Home from './Home';
 import AnswerQuestion from './AnswerQuestion';
-import Leaderboard from './Leaderboard';
+import Leaderboard from './LeaderboardPage';
 import NewQuestion from './NewQuestion';
 import ComponentNotMatch from './ComponentNotMatch';
 
