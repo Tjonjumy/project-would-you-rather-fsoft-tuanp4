@@ -69,7 +69,7 @@ const AnswerQuestion = () => {
     } 
 
     // Get answer of User
-    let optionAnswer = 1;
+    let optionAnswer;
     const onSelectOptionAnswer = (option) => {
         optionAnswer = option.target.value == 1 ? "optionOne" : "optionTwo";
         isDisabled = false;
@@ -77,6 +77,9 @@ const AnswerQuestion = () => {
 
     // Get action.payload
     const onSubmitAnswer = (idQs) => {
+        if (!optionAnswer) {
+            return;
+        }
         setIsShowBackdrop(true);
         const actionQs = {
             authUser: authUser.id,

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate, NavLink } from "react-router-dom";
 
 const TearserQuestion = (props) => {

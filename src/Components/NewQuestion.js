@@ -55,9 +55,8 @@ const NewQuestion = () => {
             optionTwoText: optTwoTxt,
             author
         }
-        console.log(newQuestion)
+
         DataAPI._saveQuestion(newQuestion).then(newQuestion => {
-            console.log(newQuestion)
             dispatch(questionsActions.saveNewQuestion(newQuestion));
             dispatch(userActions.addQuestionToUser(newQuestion));
             // reset form create new question

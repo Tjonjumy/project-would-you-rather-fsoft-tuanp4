@@ -1,6 +1,5 @@
 import { Fragment, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from "react-router-dom";
 
 import Avatar from './Avatar';
 
@@ -11,7 +10,6 @@ import * as DataAPI from '../untils/_DATA';
 
 const Login = () => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const users = useSelector(state => state.user.users);
     const questions = useSelector(state => state.questions.questions);
 
@@ -46,7 +44,6 @@ const Login = () => {
         if (userSlected) {
             dispatch(authActions.login(userSlected));
             dispatch(questionsActions.getListQuestions(allQuestions));
-            //navigate("/");
         } else {
             return;
         }

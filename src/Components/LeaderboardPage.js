@@ -8,6 +8,7 @@ const Leaderboard = () => {
     // get list Users
     const users = useSelector(state => state.user.users);
 
+    // set total and sort rank position
     const leaderboardData = Object.values(users)
     .map(user => ({
       id: user.id,
@@ -20,7 +21,6 @@ const Leaderboard = () => {
     .sort((a, b) => b.total - a.total)
     .slice(0, 3);
 
-    console.log(leaderboardData);
     const lstLeaderboard = leaderboardData.map(((leaderboard, idx) => {
        return <LeaderboardComp leaderboard={leaderboard} key={leaderboard.id} rank={idx} />
     }))
