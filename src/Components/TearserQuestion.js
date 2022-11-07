@@ -47,10 +47,10 @@ const TearserQuestion = (props) => {
                                 <label className="card-text ms-2">{question.optionTwo.text}</label>
                             </div>
                             {   !isAnswer &&
-                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/question/${question.id}`}>View Poll </NavLink>
+                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/questions/${question.id}`}>View Poll </NavLink>
                             }
                             {   isAnswer &&
-                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/question/${question.id}`}>View Result</NavLink>
+                                <NavLink href="#" className="btn btn-primary mt-3 ms-4" to={`/questions/${question.id}`}>View Result</NavLink>
                             }
                         </div>
                     </div>
