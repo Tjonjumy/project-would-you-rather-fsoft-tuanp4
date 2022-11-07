@@ -20,10 +20,10 @@ const MenuLeft = () => {
                                 <NavLink className="nav-link" activeclassname="active" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeclassname="active" to="/new-question">New Question</NavLink>
+                                <NavLink className="nav-link" activeclassname="active" to="/add">New Question</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeclassname="active" to="/leader-board">Leaderboard</NavLink>
+                                <NavLink className="nav-link" activeclassname="active" to="/leaderboard">Leaderboard</NavLink>
                             </li>
                         </ul>
                         <div className="me-3">Hello, {userLoggedIn.name}</div>
